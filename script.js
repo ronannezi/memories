@@ -138,8 +138,7 @@ function fecharModal() {
 }
 
 redacaoCards.forEach(card => {
-  card.addEventListener('click', (e) => {
-    // Evita que o clique no botão dispare duas vezes
+  card.addEventListener('click', () => {
     const id = card.dataset.redacao;
     abrirModal(id);
   });
@@ -148,7 +147,6 @@ redacaoCards.forEach(card => {
 modalClose.addEventListener('click', fecharModal);
 modalOverlay.addEventListener('click', fecharModal);
 
-// Fecha com ESC
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modal.classList.contains('active')) {
     fecharModal();
@@ -156,7 +154,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ============================================
-   ACTIVE NAV LINK (scroll spy simples)
+   ACTIVE NAV LINK (scroll spy)
    ============================================ */
 const sections = document.querySelectorAll('section[id]');
 
@@ -180,7 +178,7 @@ window.addEventListener('scroll', () => {
 });
 
 /* ============================================
-   MENSAGEM DE BOAS-VINDAS NO CONSOLE
+   MENSAGEM NO CONSOLE
    ============================================ */
 console.log('%c🎓 Site de Formatura — Mariana Costa', 'font-size:16px; font-weight:bold; color:#1a365d;');
 console.log('%cDesenvolvido com HTML, CSS e JavaScript puro para a disciplina de Programação Web.', 'color:#4a5568;');
