@@ -1,0 +1,197 @@
+/* ============================================
+   VARIÁVEIS E RESET
+   ============================================ */
+:root {
+  --cor-primaria: #1a365d;
+  --cor-secundaria: #c9a227;
+  --cor-destaque: #e53e3e;
+  --cor-fundo: #f7fafc;
+  --cor-fundo-escuro: #0f172a;
+  --cor-texto: #1a202c;
+  --cor-texto-claro: #4a5568;
+  --cor-branco: #ffffff;
+  --cor-cinza: #e2e8f0;
+  --sombra: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+  --sombra-forte: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+  --radius: 16px;
+  --transicao: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --fonte-titulo: 'Playfair Display', Georgia, serif;
+  --fonte-corpo: 'Inter', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background-color: #f0f4f8;
+  background-image:
+    /* pontos sutis (como confete de formatura) */
+    radial-gradient(circle at 20% 30%, rgba(201, 162, 39, 0.08) 0%, transparent 8%),
+    radial-gradient(circle at 80% 70%, rgba(26, 54, 93, 0.06) 0%, transparent 10%),
+    radial-gradient(circle at 40% 80%, rgba(201, 162, 39, 0.05) 0%, transparent 12%),
+    radial-gradient(circle at 70% 20%, rgba(26, 54, 93, 0.05) 0%, transparent 9%),
+    /* linhas leves de caderno */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(26, 54, 93, 0.03) 39px,
+      rgba(26, 54, 93, 0.03) 40px
+    );
+  background-attachment: fixed;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ============================================
+   UTILITÁRIOS
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.section__tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cor-secundaria);
+  margin-bottom: 12px;
+}
+
+.section__title {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  color: var(--cor-primaria);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.section__desc {
+  color: var(--cor-texto-claro);
+  font-size: 1.05rem;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transicao);
+}
+
+.btn--primary {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+.btn--primary:hover {
+  background: #2c5282;
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+}
+
+.btn--outline {
+  border: 2px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+.btn--outline:hover {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+.btn--small {
+  padding: 10px 18px;
+  font-size: 0.875rem;
+  color: var(--cor-primaria);
+  border: 1.5px solid var(--cor-primaria);
+  border-radius: 8px;
+}
+
+.btn--small:hover {
+  background: var(--cor-primaria);
+  color: white;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(247, 250, 252, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: all var(--transicao);
+}
+
+.header.scrolled {
+  border-bottom-color: var(--cor-cinza);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
