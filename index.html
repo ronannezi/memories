@@ -1,186 +1,81 @@
-/* ============================================
-   DADOS DAS REDAÇÕES (conteúdo completo)
-   ============================================ */
-const redacoes = {
-  1: {
-    titulo: "O impacto das redes sociais na saúde mental dos adolescentes",
-    ano: "2024",
-    tipo: "Dissertativa-argumentativa",
-    texto: `
-      <p>Em um mundo cada vez mais conectado, a linha entre o real e o virtual torna-se cada vez mais tênue. As redes sociais, que nasceram com a promessa de aproximar pessoas, hoje também carregam o peso de distâncias emocionais profundas, especialmente entre os adolescentes.</p>
-      <p>O excesso de exposição, a busca constante por validação por meio de curtidas e a comparação permanente com vidas “perfeitas” criadas nas telas têm gerado ansiedade, baixa autoestima e, em casos mais graves, depressão. Estudos apontam que o tempo excessivo nas redes está diretamente relacionado a distúrbios do sono e a sintomas de isolamento social.</p>
-      <p>No entanto, não se pode demonizar a ferramenta. As redes também são espaços de mobilização, de expressão artística e de apoio emocional. O problema não está na tecnologia em si, mas no uso desequilibrado e na ausência de educação digital crítica.</p>
-      <p>É fundamental que escolas, famílias e os próprios jovens construam juntos uma relação mais saudável com o digital. Limitar o tempo de tela, praticar o autoconhecimento e valorizar as interações presenciais são caminhos possíveis. Afinal, a vida real ainda é o lugar onde as memórias mais verdadeiras são construídas.</p>
-    `
-  },
-  2: {
-    titulo: "A última aula",
-    ano: "2025",
-    tipo: "Narrativa",
-    texto: `
-      <p>O sino tocou pela última vez. Eu olhei para os corredores vazios e senti o peso de três anos que passaram voando. As paredes ainda guardavam os cartazes do grêmio, as mensagens de incentivo escritas no quadro branco e o cheiro de café da sala dos professores.</p>
-      <p>Sentei na minha carteira preferida — aquela do fundo, perto da janela — e fechei os olhos. Vi a primeira semana de aula, o nervosismo de conhecer novos colegas, as noites em claro estudando para o ENEM, as risadas no intervalo e as conversas intermináveis sobre o futuro.</p>
-      <p>Quando abri os olhos, a sala estava realmente vazia. Só restava o eco da minha respiração e a certeza de que nada seria igual. Peguei a mochila, apaguei a luz e saí. No corredor, encontrei a professora de Português. Ela sorriu e disse apenas: “Agora começa a parte boa.”</p>
-      <p>Eu sorri de volta. Talvez ela tivesse razão.</p>
-    `
-  },
-  3: {
-    titulo: "Por que a educação precisa de mais humanidade",
-    ano: "2025",
-    tipo: "Argumentativa",
-    texto: `
-      <p>Notas altas não garantem cidadãos melhores. É preciso ensinar empatia, escuta e resiliência. Durante o Ensino Médio, percebi que o sistema valoriza excessivamente o desempenho quantitativo e pouco o desenvolvimento emocional e ético dos estudantes.</p>
-      <p>Vivemos em uma sociedade marcada por polarizações, preconceitos e falta de diálogo. Se a escola não for o espaço onde se aprende a conviver com a diferença, a ouvir o outro e a resolver conflitos de forma pacífica, quem fará esse papel?</p>
-      <p>Projetos de vida, rodas de conversa, mediação de conflitos e o incentivo à expressão artística são caminhos possíveis. Professores que se interessam pela história de cada aluno, e não apenas pelas notas, transformam vidas.</p>
-      <p>A educação verdadeiramente transformadora é aquela que forma pessoas inteiras — capazes de pensar criticamente e de sentir profundamente. Porque o mundo precisa tanto de inteligência quanto de humanidade.</p>
-    `
-  },
-  4: {
-    titulo: "O cheiro de lanche da cantina",
-    ano: "2026",
-    tipo: "Crônica",
-    texto: `
-      <p>Tem cheiros que ficam grudados na memória. O da cantina da escola é um deles: pão de queijo quente saindo do forno, refrigerante gelado e aquele molho de mostarda que todo mundo reclamava, mas pedia mesmo assim.</p>
-      <p>No intervalo, a fila era quase um ritual. Conversas sobre provas, fofocas da turma, planos para o fim de semana — tudo acontecia ali, entre o balcão e as mesas de plástico. Às vezes a gente nem comia tanto. O importante era estar junto.</p>
-      <p>Hoje, quando passo na frente de alguma padaria e sinto o cheiro de pão de queijo, volto instantaneamente para aqueles quinze minutos de liberdade. O sino ainda não tinha tocado, o futuro ainda parecia distante e a única preocupação era se dava tempo de comprar mais um pastel.</p>
-      <p>A cantina fechou as portas no último dia de aula. Mas o cheiro, esse, eu levo comigo.</p>
-    `
-  }
-};
+MC.
+Início Memórias Redações Sobre
 
-/* ============================================
-   ELEMENTOS DO DOM
-   ============================================ */
-const header = document.getElementById('header');
-const menuToggle = document.getElementById('menuToggle');
-const nav = document.getElementById('nav');
-const modal = document.getElementById('modal');
-const modalOverlay = document.getElementById('modalOverlay');
-const modalClose = document.getElementById('modalClose');
-const modalBody = document.getElementById('modalBody');
-const navLinks = document.querySelectorAll('.nav__link');
-const timelineItems = document.querySelectorAll('.timeline__item');
-const redacaoCards = document.querySelectorAll('.redacao-card');
+★ ✎ 📖 ✦ 🎓 ★ 📝 ✦
+Formanda · Classe de 2026
 
-/* ============================================
-   MENU MOBILE
-   ============================================ */
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active');
-  nav.classList.toggle('open');
-});
+Mariana Costa
+Uma jornada de 15 anos entre salas de aula, amizades e descobertas.
+Este site é o meu álbum digital de formatura.
 
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    menuToggle.classList.remove('active');
-    nav.classList.remove('open');
-  });
-});
+Ver memórias Ler redações
+Role para baixo
+Linha do tempo
+Memórias Escolares
+Do primeiro dia de escola até o último sino do 3º ano. Uma viagem cronológica pelos momentos que moldaram quem eu sou.
 
-/* ============================================
-   HEADER SCROLL
-   ============================================ */
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
+Jardim de Infância / Pré-escola
+O começo de tudo
+Eu tinha apenas 5 anos quando entrei na Escola Municipal Pequeno Príncipe. Lembro do cheiro de tinta guache, do recreio interminável e da professora Ana Paula que me ensinou a escrever meu nome pela primeira vez. Meu maior desafio? Parar de chorar na hora da saída.
 
-/* ============================================
-   ANIMAÇÃO DA TIMELINE (Intersection Observer)
-   ============================================ */
-const observerOptions = {
-  threshold: 0.2,
-  rootMargin: '0px 0px -50px 0px'
-};
+Primeira amizade Desenho livre Lanche compartilhado
+📷 Foto da formatura do jardim
+Ensino Fundamental I (1º ao 5º ano)
+Aprendendo a ser estudante
+Na Escola Estadual Dom Pedro II comecei a descobrir o gosto pela leitura. Ganhava prêmios de “melhor leitora do mês” e tinha um caderno secreto de poemas. O desafio maior foi a matemática — até que a professora Cláudia me mostrou que números também contam histórias.
 
-const timelineObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, observerOptions);
+Primeira apresentação de teatro (fui a floresta encantada)
+Campeã do concurso de ortografia da escola
+Amizade que dura até hoje: a Júlia
+📚 Feira de Ciências 2017
+Ensino Fundamental II (6º ao 9º ano)
+A tempestade de hormônios e sonhos
+Entrei no Colégio Estadual Monteiro Lobato. Foi a fase das mudanças: novos colegas, professores mais exigentes e a descoberta de que eu gostava de escrever. Em 2020 veio a pandemia — aulas online, solidão e o desafio de manter o foco. Mas também nasceu meu diário digital e a paixão por literatura.
 
-timelineItems.forEach(item => {
-  timelineObserver.observe(item);
-});
+Pandemia Grêmio estudantil Primeira redação nota 10
+💻 Aula online + gato no colo
+Ensino Médio (1º ao 3º ano)
+Os anos que mudaram tudo
+No Colégio Técnico Estadual, o ritmo intensificou. Vestibular, ENEM, amizades mais profundas e a certeza de que quero seguir na área de Comunicação/Jornalismo. O 3º ano foi intenso: noites em claro estudando, o trabalho de conclusão, a última festa da turma e o aperto no peito de saber que tudo estava acabando.
 
-/* ============================================
-   MODAL DE REDAÇÕES
-   ============================================ */
-function abrirModal(id) {
-  const redacao = redacoes[id];
-  if (!redacao) return;
+Representante de turma por dois anos
+Participação no projeto de jornal da escola
+Redação nota 980 no ENEM (melhor momento!)
+Amizades que levarei para a vida
+🎓 Foto da turma no último dia de aula
+Produções textuais
+Portfólio de Redações
+Textos produzidos ao longo das aulas de Língua Portuguesa e Redação. Clique em cada card para ler o texto completo.
 
-  modalBody.innerHTML = `
-    <h2>${redacao.titulo}</h2>
-    <div class="modal__meta">
-      <span>${redacao.ano}</span>
-      <span>${redacao.tipo}</span>
-    </div>
-    <div class="modal__texto">
-      ${redacao.texto}
-    </div>
-  `;
+2024 Dissertativa
+O impacto das redes sociais na saúde mental dos adolescentes
+Em um mundo cada vez mais conectado, a linha entre o real e o virtual torna-se cada vez mais tênue...
 
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-}
+Ler texto completo →
+2025 Narrativa
+A última aula
+O sino tocou pela última vez. Eu olhei para os corredores vazios e senti o peso de três anos que passaram voando...
 
-function fecharModal() {
-  modal.classList.remove('active');
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
+Ler texto completo →
+2025 Argumentativa
+Por que a educação precisa de mais humanidade
+Notas altas não garantem cidadãos melhores. É preciso ensinar empatia, escuta e resiliência...
 
-redacaoCards.forEach(card => {
-  card.addEventListener('click', (e) => {
-    // Evita que o clique no botão dispare duas vezes
-    const id = card.dataset.redacao;
-    abrirModal(id);
-  });
-});
+Ler texto completo →
+2026 Crônica
+O cheiro de lanche da cantina
+Tem cheiros que ficam grudados na memória. O da cantina da escola é um deles: pão de queijo quente e refrigerante gelado...
 
-modalClose.addEventListener('click', fecharModal);
-modalOverlay.addEventListener('click', fecharModal);
+Ler texto completo →
+Até logo
+Uma nova página começa
+Este site é mais do que um trabalho de Programação Web. É o meu jeito de agradecer a cada professor, a cada amizade e a cada desafio que me trouxe até aqui. O Ensino Médio acaba, mas as histórias continuam.
 
-// Fecha com ESC
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.classList.contains('active')) {
-    fecharModal();
-  }
-});
+Obrigada por ter feito parte da minha trajetória — ou por ter acompanhado ela por aqui.
 
-/* ============================================
-   ACTIVE NAV LINK (scroll spy simples)
-   ============================================ */
-const sections = document.querySelectorAll('section[id]');
+Mariana Costa
+Formanda 2026
+🌟 Sua foto de formatura aqui
+Feito com ❤️ e muito HTML, CSS & JavaScript
 
-window.addEventListener('scroll', () => {
-  const scrollY = window.pageYOffset;
-
-  sections.forEach(section => {
-    const sectionHeight = section.offsetHeight;
-    const sectionTop = section.offsetTop - 100;
-    const sectionId = section.getAttribute('id');
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${sectionId}`) {
-          link.classList.add('active');
-        }
-      });
-    }
-  });
-});
-
-/* ============================================
-   MENSAGEM DE BOAS-VINDAS NO CONSOLE
-   ============================================ */
-console.log('%c🎓 Site de Formatura — Mariana Costa', 'font-size:16px; font-weight:bold; color:#1a365d;');
-console.log('%cDesenvolvido com HTML, CSS e JavaScript puro para a disciplina de Programação Web.', 'color:#4a5568;');
+Atividade Avaliativa Final · Programação Web · 2026
